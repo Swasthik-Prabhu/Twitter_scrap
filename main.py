@@ -16,7 +16,7 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
-client = MongoClient(MONGO_URL)
+client = MongoClient(MONGO_URI)
 db = client['twitter_trends']
 collection = db['trends']
 
