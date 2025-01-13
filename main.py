@@ -16,7 +16,7 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
-client = MongoClient('mongodb+srv://swasthikp03:swasthik@swasthikprabhu.fabhbaq.mongodb.net/')
+client = MongoClient(MONGO_URL)
 db = client['twitter_trends']
 collection = db['trends']
 
@@ -36,14 +36,14 @@ def scrape_twitter_trends():
         username = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.NAME, "text"))
         )
-        username.send_keys("swasthikp04@gmail.com")
+        username.send_keys("User_name")
         username.send_keys(Keys.RETURN)
         time.sleep(15)
 
         password = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.NAME, "password"))
         )
-        password.send_keys("SwasthiK@2024")
+        password.send_keys("Password")
         password.send_keys(Keys.RETURN)
 
         time.sleep(5)
